@@ -274,7 +274,7 @@ Console.ReadLine(); // Set here a break point to see the results
 
 ## Another Use Case: Authors
 
-When you finally set up the Generic Http Service, you have a working use case (the BookService), things get a lot easier because the heavy lifting is done.
+When you have a working use case (the BookService), things get a lot easier because the heavy lifting is done.
 
 Imagine, you have another use case where you need to Get or Create Authors from the API.
 
