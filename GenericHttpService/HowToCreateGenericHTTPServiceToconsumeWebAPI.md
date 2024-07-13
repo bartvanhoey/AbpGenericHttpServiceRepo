@@ -6,10 +6,10 @@ This article will guide you through the process of **creating a Generic HTTP ser
 
 To simplify things, we will create a **.NET Core WEB API** (BookStoreWebApi) and a **.NET Core Console** (BookStoreConsole) application to implement a **generic HTTP Service** that consumes a **C# CRUD API**.
 
-You can find the **BookStoreWebApi** and **BookStoreConsole** sample apps in the [GitHub repo](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
+You can find the **BookStoreWebApi** and **BookStoreConsole** sample applications in the [GitHub repo](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
 
-Use the approach to consume an **ABP Framework API**, as you can see in the [mobile .NET MAUI app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo) and [.NET Core Console app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
-in the GitHub Repo
+To consume an **ABP Framework API**, have a look at [mobile .NET MAUI app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo) and [.NET Core Console app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
+in the Repo
 
 ## Prerequisites
 
