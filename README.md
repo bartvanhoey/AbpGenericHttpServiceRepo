@@ -86,7 +86,7 @@ namespace BookStoreWebApi.Controllers
 
 Press `F5` to run the API. It will be hosted on `https://localhost:xxxxx`.
 
-![Swagger Api Endpoints BooksController](../images/swagger_bookscontroller.png)
+![Swagger Api Endpoints BooksController](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo/blob/main/images/swagger_bookscontroller.png)
 
 ## Creating a Generic HTTP Service
 
