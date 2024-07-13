@@ -8,7 +8,7 @@ To simplify things, we will create a **.NET Core WEB API** (BookStoreWebApi) and
 
 You can find the **BookStoreWebApi** and **BookStoreConsole** sample applications in the [GitHub repo](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
 
-To consume an **ABP Framework API**, have a look at [mobile .NET MAUI app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo) and [.NET Core Console app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
+To consume an **ABP Framework API**, have a look at the [mobile .NET MAUI app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo) and [.NET Core Console app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
 in the Repo
 
 ## Prerequisites
@@ -93,7 +93,7 @@ Press `F5` to run the API. It will be hosted on `https://localhost:xxxxx`.
 Open a terminal a run the command below to create a new console app.
 
 ```bash
-    dotnet new console -o BookStoreConsole
+dotnet new console -o BookStoreConsole
 ```
 
 ### Add Dependency Injection Nuget Package
@@ -101,7 +101,7 @@ Open a terminal a run the command below to create a new console app.
 Open a terminal in the root of the `Console app` and install the `Microsoft.Extensions.DependencyInjection` NuGet package.
 
 ```bash
-    dotnet add package Microsoft.Extensions.DependencyInjection
+dotnet add package Microsoft.Extensions.DependencyInjection
 ```
 
 ## IHttpService interface
@@ -237,6 +237,8 @@ public class BookService(
 }
 ```
 
+## Test the Generic HTTP Service
+
 ### Program.cs
 
 Copy/Paste the content below in the Program.cs file and hit `F5` to run the console app.
@@ -270,19 +272,19 @@ var books = await bookService.GetBooksAsync();
 Console.ReadLine(); // Set here a break point to see the results
 ```
 
-### Another Use Case: Authors
+## Another Use Case: Authors
 
-When you finally set up the Generic Http Service, and you have a working use case (the BookService), things get a lot easier because the heavy lifting is already done.
+When you finally set up the Generic Http Service, you have a working use case (the BookService), things get a lot easier because the heavy lifting is done.
 
 Imagine, you have another use case where you need to Get or Create Authors from the API.
 
 The only things you need to do are:
 
-1. Create the Data Transfer Objects (CreateAuthorDto, GetAuthorsDto, DeleteAuthorDto and UpdateAuthorDto)
+1. Create the DTOS (CreateAuthorDto, GetAuthorsDto, DeleteAuthorDto and UpdateAuthorDto)
 2. Create an IAuthorService interface and AuthorService class
 3. Register the Author Http Service to the Dependency Injection System
 4. Register the AuthorService to the Dependency Injection System
-5. Call CRUD methods you need to call
+5. Call the CRUD methods you need to call
 
 Get the [source code](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo) on GitHub.
 
