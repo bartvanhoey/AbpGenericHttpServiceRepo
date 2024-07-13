@@ -29,7 +29,7 @@ First, create a simple .NET Core Web API with a BooksController with the standar
 ### Copy Data/Infra/Dtos folders
 
 Copy/paste the Data/Infra and Dtos folder of the BookstoreWebApi sample project into the root of your project.
-The Data Transfer Objects (DTOs) are POCO classes that to send/receive data to/from the API.
+The Data Transfer Objects (DTOs) are POCO classes that send/receive data to/from the API.
 
 ### Add a BooksController class to the Controllers folder
 
