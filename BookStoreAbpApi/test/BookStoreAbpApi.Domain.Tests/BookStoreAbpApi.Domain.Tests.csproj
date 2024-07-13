@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BookStoreAbpApi</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\BookStoreAbpApi.Domain\BookStoreAbpApi.Domain.csproj" />
+    <ProjectReference Include="..\BookStoreAbpApi.TestBase\BookStoreAbpApi.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

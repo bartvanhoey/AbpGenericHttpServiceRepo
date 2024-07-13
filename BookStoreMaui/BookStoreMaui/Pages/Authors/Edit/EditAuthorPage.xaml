@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookStoreMaui.Pages.Authors.Edit.EditAuthorPage">
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="10">
+            <Entry Placeholder="Name" Text="{Binding Author.Name}" />
+            <DatePicker Date="{Binding Author.BirthDate}"></DatePicker>
+            <Editor Placeholder="Short bio" Text="{Binding Author.ShortBio}" />
+            <Button Text="Save" Command="{Binding SaveAuthorCommand}" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

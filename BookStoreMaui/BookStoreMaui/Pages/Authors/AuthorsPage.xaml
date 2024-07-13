@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             xmlns:androidSpecific="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:authors="clr-namespace:BookStoreMaui.Pages.Authors"
+             x:Class="BookStoreMaui.Pages.Authors.AuthorsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding GoToAddAuthorPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="40" Color="Black" Glyph="{x:Static fontAwesome:FAIcons.Plus}" FontFamily="FASolid" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding SourceItemDtos}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView androidSpecific:SwipeView.SwipeTransitionMode="Drag">
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    BackgroundColor="Red"
+                                    IsDestructive="True"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type authors:AuthorsViewModel}}, 
+                                                    Path=DeleteAuthorCommand}"
+                                    CommandParameter="{Binding .}">
+                                    <SwipeItem.IconImageSource>
+                                        <FontImageSource Size="Small" FontFamily="FASolid"
+                                                         Glyph="{x:Static fontAwesome:FAIcons.TrashAlt}" />
+                                    </SwipeItem.IconImageSource>
+                                </SwipeItem>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    BackgroundColor="Orange"
+                                    IsDestructive="True"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type authors:AuthorsViewModel}}, 
+                                                    Path=EditAuthorCommand}"
+                                    CommandParameter="{Binding .}">
+                                    <SwipeItem.IconImageSource>
+                                        <FontImageSource Size="Small" FontFamily="FASolid"
+                                                         Glyph="{x:Static fontAwesome:FAIcons.Pencil}" />
+                                    </SwipeItem.IconImageSource>
+                                </SwipeItem>
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="18" />
+                            <Label Text="{Binding BirthDate}" />                            
+                            <Label Text="{Binding ShortBio}" />
+                        </StackLayout>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
