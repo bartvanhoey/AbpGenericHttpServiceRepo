@@ -22,7 +22,7 @@ in the Repo.
 
 ### Setting Up the .NET Core Web API
 
-First, open a terminal and create a simple **.NET Core Web API** with a **BooksController** with the standard CRUD endpoints.
+First, open a terminal and create a **.NET Core API** with a **BooksController** with the standard CRUD endpoints.
 
 ```bash
 dotnet new webapi --use-controllers -o BookStoreWebApi
