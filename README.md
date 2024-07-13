@@ -1,4 +1,4 @@
-# How to create a Generic HTTP Service to consume a Web API
+# Create a Generic HTTP Service to consume a Web API
 
 ## Generics: Write Once, Use Every Time
 
