@@ -219,8 +219,6 @@ public interface IBookService
 Create a **BookService class** in the **Services/Books** folder.
 The BookService class gets the correct HttpService via Constructor Dependency Injection.
 
-**Attention**: add the port number where your API is running on in the snippet below.
-
 ```csharp
 using BookStoreConsole.Services.Books.Dtos;
 using BookStoreConsole.Services.Http;
@@ -231,6 +229,8 @@ public class BookService(
     IHttpService<BookDto, CreateBookDto, UpdateBookDto, GetBooksDto, Guid> httpService)
     : IBookService
 {
+    // REPLACE <the-api-port-number-here> with the port number the API is running on !!!
+
     const string BookApiUrl = "https://localhost:<the-api-port-number-here>/api/app/book"; 
     
     public async Task<IEnumerable<BookDto>> GetBooksAsync() 
