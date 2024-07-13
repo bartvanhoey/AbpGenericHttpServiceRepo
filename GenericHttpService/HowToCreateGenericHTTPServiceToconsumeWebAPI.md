@@ -197,9 +197,9 @@ public class HttpService<T, TC, TU, TL, TD> : HttpServiceBase<TL>, IHttpService<
 
 ### Create an IBookService interface
 
-Create a **Books/Dtos** folder in the **Services** folder of your project.
+Create a **Books** folder in the **Services** folder of your project.
 
-Copy/Paste the **Services/Books/Dtos** folder of the **BookStoreConsole** sample application into the **Services/Books/Dtos** folder.
+Copy/Paste the **Services/Books/Dtos** folder of the **BookStoreConsole** sample application into the **Services/Books** folder.
 
 Create an **IBookService.cs** interface in the **Services/Books** folder.
 
