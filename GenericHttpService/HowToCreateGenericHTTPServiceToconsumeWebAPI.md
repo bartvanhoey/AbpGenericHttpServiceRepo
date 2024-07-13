@@ -1,6 +1,6 @@
 # How to Create a Generic HTTP Service to consume a Web API
 
-## Write Once, Use Every Time
+## Generics: Write Once, Use Every Time
 
 This article will guide you through the process of **creating a Generic HTTP service in C#** that consumes a **.NET Core Web API.**.
 
