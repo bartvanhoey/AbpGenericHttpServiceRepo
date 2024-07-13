@@ -248,7 +248,7 @@ public class BookService(
 
 ### Program.cs
 
-Copy/Paste the content below in the Program.cs file and hit `F5` to run the console app.
+Copy/Paste the content below in the **Program.cs** file and hit `F5` to run the console app.
 
 ```csharp
 using BookStoreConsole.Services.Books;
