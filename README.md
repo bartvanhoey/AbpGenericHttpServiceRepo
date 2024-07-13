@@ -287,7 +287,7 @@ Imagine, you have another use case where you need to Get or Create Authors from 
 
 The only things you need to do are:
 
-### Create the DTOS (CreateAuthorDto, GetAuthorsDto, DeleteAuthorDto and UpdateAuthorDto)
+### Create the DTOS (CreateAuthorDto, GetAuthorsDto, ...)
 
 ```csharp
 namespace BookStoreWebApi.Dtos.Authors;
