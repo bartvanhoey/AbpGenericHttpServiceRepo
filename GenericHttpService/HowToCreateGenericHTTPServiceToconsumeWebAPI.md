@@ -20,7 +20,7 @@ in the Repo
 
 ### Setting Up the .NET Core Web API
 
-First, let's create a simple .NET Core Web API with a BooksController with the standard CRUD endpoints.
+First, create a simple .NET Core Web API with a BooksController with the standard CRUD endpoints.
 
 ```bash
     dotnet new webapi --use-controllers -o BookStoreWebApi
@@ -29,7 +29,7 @@ First, let's create a simple .NET Core Web API with a BooksController with the s
 ### Copy Data/Infra/Dtos folders
 
 Copy/paste the Data/Infra and Dtos folder of the BookstoreWebApi sample project into the root of your project.
-The Data Transfer Objects (DTOs) are POCO classes that are used to send/receive data to/from the API.
+The Data Transfer Objects (DTOs) are POCO classes that to send/receive data to/from the API.
 
 ### Add a BooksController class to the Controllers folder
 
@@ -90,7 +90,7 @@ Press `F5` to run the API. It will be hosted on `https://localhost:xxxxx`.
 
 ### Create a new Console app
 
-Open a terminal a run the command below to create a new console app.
+Open a terminal and run the command below to create a new console app.
 
 ```bash
 dotnet new console -o BookStoreConsole
@@ -106,9 +106,9 @@ dotnet add package Microsoft.Extensions.DependencyInjection
 
 ## IHttpService interface
 
-Copy/Paste the **Infra** folder of the **BookStoreConsole** sample application into the **Services/Http** folder
+Copy/Paste the **Infra** folder of the **BookStoreConsole** sample application into the **Services/Http** folder.
 
-Create a **IHttpService.cs** interface with the standard CRUD method definitions in the **Services/Http** folder
+Create a **IHttpService.cs** interface with the standard CRUD method definitions in the **Services/Http** folder.
 
 ```csharp
 using BookStoreConsole.Services.Http.Infra;
@@ -193,7 +193,7 @@ public class HttpService<T, TC, TU, TL, TD> : HttpServiceBase<TL>, IHttpService<
 
 ### Create an IBookService interface
 
-Copy/Paste the **Services/Books/Dtos** folder of the **BookStoreConsole** sample application into the **Services/Books/Dtos** folder
+Copy/Paste the **Services/Books/Dtos** folder of the **BookStoreConsole** sample application into the **Services/Books/Dtos** folder.
 
 Create an **IBookService.cs** interface in the **Services/Books** folder.
 
@@ -206,11 +206,11 @@ public interface IBookService
 {
     Task<IEnumerable<BookDto>> GetBooksAsync();
     Task<BookDto?> CreateBookAsync(CreateBookDto bookDto);
-    // find other method definitions in the BookStoreConsole sample project ...
+    // Find other method definitions in the BookStoreConsole sample project ...
 }
 ```
 
-Create an **BookService class** in the **Services/Books** folder.
+Create a **BookService class** in the **Services/Books** folder.
 The BookService class gets the correct HttpService via Constructor Dependency Injection.
 Attention: Change the port number to the port number your API is running on.
 
@@ -232,7 +232,7 @@ public class BookService(
     public async Task<BookDto?> CreateBookAsync(CreateBookDto bookDto) 
         => await httpService.CreateAsync($"{BookApiUrl}", bookDto);
 
-    // find other methods in the BookStoreConsole sample project ...
+    // Find other methods in the BookStoreConsole sample project ...
 
 }
 ```
@@ -269,7 +269,7 @@ var createdBook = await bookService.CreateBookAsync(new CreateBookDto("New Book3
 // Get a list of books
 var books = await bookService.GetBooksAsync();
 
-Console.ReadLine(); // Set here a break point to see the results
+Console.ReadLine(); // Set here a breakpoint to see the results
 ```
 
 ## Another Use Case: Authors
