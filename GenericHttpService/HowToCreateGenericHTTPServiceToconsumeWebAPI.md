@@ -280,11 +280,56 @@ Imagine, you have another use case where you need to Get or Create Authors from 
 
 The only things you need to do are:
 
-1. Create the DTOS (CreateAuthorDto, GetAuthorsDto, DeleteAuthorDto and UpdateAuthorDto)
-2. Create an IAuthorService interface and AuthorService class
-3. Register the Author Http Service to the Dependency Injection System
-4. Register the AuthorService to the Dependency Injection System
-5. Call the CRUD methods you need to call
+### Create the DTOS (CreateAuthorDto, GetAuthorsDto, DeleteAuthorDto and UpdateAuthorDto)
+
+```csharp
+namespace BookStoreWebApi.Dtos.Authors;
+
+public class AuthorDto
+{
+    public Guid Id { get; set; }
+    public string? Name { get; set; }
+    public DateTime BirthDate { get; set; }
+    public string? ShortBio { get; set; }
+}
+```
+
+### Create an IAuthorService interface and AuthorService class
+
+```csharp
+public interface IAuthorService
+{
+    Task<IEnumerable<AuthorDto>> GetAuthorsAsync();
+    Task<AuthorDto?> CreateAuthorAsync(CreateAuthorDto bookDto);
+    // other method definitions here
+}
+
+public class AuthorService : IAuthorService
+{
+    // implementation here
+}
+```
+
+### Register the Author Http Service to the Dependency Injection System
+
+```csharp
+services.AddTransient<IHttpService<AuthorDto, CreateAuthorDto, UpdateAuthorDto, GetAuthorsDto, Guid>,
+    HttpService<AuthorDto, CreateAuthorDto, UpdateAuthorDto, GetAuthorsDto, Guid>>();
+```
+
+### Register the AuthorService to the Dependency Injection System
+
+```csharp
+services.AddTransient<IAuthorService, AuthorService>();
+```
+
+### Call the CRUD methods you need to call
+
+```csharp
+await authorService.CreateAuthorAsync(new CreateAuthorDto(){ ... });
+
+var authors = await authorService.GetAuthorsAsync();
+```
 
 Get the [source code](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo) on GitHub.
 
