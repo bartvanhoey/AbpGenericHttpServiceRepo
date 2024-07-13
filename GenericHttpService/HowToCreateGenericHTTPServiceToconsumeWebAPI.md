@@ -4,10 +4,11 @@
 
 This article will guide you through the process of **creating a Generic HTTP service in C#** that consumes a **.NET Core Web API.**.
 
-To simplify things, we will create a standard **.NET Core WEB API** (BookStoreWebApi) and a **.NET Core Console** (BookStoreConsole) application to implement a **generic HTTP Service** that consumes a **C# CRUD API**.
-You can find the **BookStoreWebApi** and **BookStoreConsole** in the [GitHub repo](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
+To simplify things, we will create a **.NET Core WEB API** (BookStoreWebApi) and a **.NET Core Console** (BookStoreConsole) application to implement a **generic HTTP Service** that consumes a **C# CRUD API**.
 
-With the exact same approach you can also consume an **ABP Framework API**, as you can see in the [mobile .NET MAUI app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo) and [.NET Core Console app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
+You can find the **BookStoreWebApi** and **BookStoreConsole** sample apps in the [GitHub repo](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
+
+Use the approach to consume an **ABP Framework API**, as you can see in the [mobile .NET MAUI app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo) and [.NET Core Console app](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo)
 in the GitHub Repo
 
 ## Prerequisites
@@ -28,7 +29,7 @@ First, let's create a simple .NET Core Web API with a BooksController with the s
 ### Copy Data/Infra/Dtos folders
 
 Copy/paste the Data/Infra and Dtos folder of the BookstoreWebApi sample project into the root of your project.
-The Data Transfer Objects (DTOs) are classes that are used to send/receive data to/from the API.
+The Data Transfer Objects (DTOs) are POCO classes that are used to send/receive data to/from the API.
 
 ### Add a BooksController class to the Controllers folder
 
@@ -97,13 +98,15 @@ Open a terminal a run the command below to create a new console app.
 
 ### Add Dependency Injection Nuget Package
 
-In the `Console app` project, install the `Microsoft.Extensions.DependencyInjection` NuGet package.
+Open a terminal in the root of the `Console app` and install the `Microsoft.Extensions.DependencyInjection` NuGet package.
 
 ```bash
     dotnet add package Microsoft.Extensions.DependencyInjection
 ```
 
 ## IHttpService interface
+
+Copy/Paste the **Infra** folder of the **BookStoreConsole** sample application into the **Services/Http** folder
 
 Create a **IHttpService.cs** interface with the standard CRUD method definitions in the **Services/Http** folder
 
@@ -122,8 +125,6 @@ public interface IHttpService<T, in TC, in TU, in TG, in TD>
     Task DeleteAsync(string uri, TD id);
 }
 ```
-
-Copy/Paste the **Infra** folder of the **BookStoreConsole** sample application into the **Services/Http** folder
 
 Create a **HttpService.cs** class in the **Http** folder that implements the **IHttpService interface**
 
@@ -210,7 +211,7 @@ public interface IBookService
 ```
 
 Create an **BookService class** in the **Services/Books** folder.
-As you can see, the BookService class gets the correct HttpService via Constructor Dependency Injection.
+The BookService class gets the correct HttpService via Constructor Dependency Injection.
 Attention: Change the port number to the port number your API is running on.
 
 ```csharp
@@ -238,7 +239,7 @@ public class BookService(
 
 ### Program.cs
 
-Copy/Paste the content below in the Program.cs file and hit F5 to run the program.
+Copy/Paste the content below in the Program.cs file and hit `F5` to run the console app.
 
 ```csharp
 using BookStoreConsole.Services.Books;
@@ -281,7 +282,7 @@ The only things you need to do are:
 2. Create an IAuthorService interface and AuthorService class
 3. Register the Author Http Service to the Dependency Injection System
 4. Register the AuthorService to the Dependency Injection System
-5. Call CRUD methods you need to call 
+5. Call CRUD methods you need to call
 
 Get the [source code](https://github.com/bartvanhoey/AbpGenericHttpServiceRepo) on GitHub.
 
