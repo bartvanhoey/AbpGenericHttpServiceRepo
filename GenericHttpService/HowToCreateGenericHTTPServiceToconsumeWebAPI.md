@@ -30,7 +30,7 @@ dotnet new webapi --use-controllers -o BookStoreWebApi
 
 ### Copy Data/Infra/Dtos folders
 
-Copy/paste the **Data/Infra and Dtos** folder of the **BookstoreWebApi** sample project into the root of the newly created API.
+Copy/paste the **Data/Infra and Dtos** folders of the **BookstoreWebApi** sample project into the root of the newly created API.
 In the Dtos folder you find the **Data Transfer Objects** for sending/receiving data to/from the API.
 
 ### Add a BooksController class to the Controllers folder
